@@ -18,7 +18,7 @@ public class CheckoutSolution {
         int countA = itemCounts.getOrDefault('A', 0);
         total += (countA/5) * 200 +((countA % 5 ) /3) * 130   + (countA % 5 % 3 ) *50 ;
         int countB =itemCounts.getOrDefault('B', 0);
-        total+= (countB /2) *45 + (countB %2 ) *30;
+      //  total+= (countB /2) *45 + (countB %2 ) *30;
         int countC = itemCounts.getOrDefault('C',0);
         total +=countC *20;
         int countD =itemCounts.getOrDefault('D', 0);
@@ -32,3 +32,4 @@ public class CheckoutSolution {
         return total;
     }
 }
+
