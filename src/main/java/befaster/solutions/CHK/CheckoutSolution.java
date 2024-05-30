@@ -85,7 +85,8 @@ public class CheckoutSolution {
 
         int countU =itemCounts.getOrDefault('U', 0);
         int setsofFour = countU/ 4;
-        int remainingU = countF % 4;
+
+        int remainingU = countU % 4;
         total += setsofFour * 120;
         if (remainingU == 3) {
             total += 120;
@@ -119,4 +120,5 @@ public class CheckoutSolution {
         return total;
     }
 }
+
 
