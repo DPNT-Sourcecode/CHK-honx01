@@ -16,14 +16,19 @@ public class CheckoutSolution {
         }
         int total = 0;
         int countA = itemCounts.getOrDefault('A', 0);
-        total += (countA / 3) * 130 + (countA % 3 ) *50;
+        total += (countA/5) * 200 +((countA % 5 ) /3) * 130   + (countA % 5 % 3 ) *50 ;
         int countB =itemCounts.getOrDefault('B', 0);
         total+= (countB /2) *45 + (countB %2 ) *30;
         int countC = itemCounts.getOrDefault('C',0);
         total +=countC *20;
         int countD =itemCounts.getOrDefault('D', 0);
         total += countD *15;
+        int countE = itemCounts.getOrDefault('E',0);
+        total += countE *40;
+        int freeB = countE /2;
+        countB -= freeB;
+        if (countB>0){
+            total += (countB /2 ) * 45 + (countB % 2 ) *30;}
         return total;
     }
 }
-
