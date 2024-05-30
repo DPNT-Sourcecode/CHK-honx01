@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class CheckoutSolution {
     public Integer checkout(String skus) {
-        if ( !skus.matches("[ABCD]*")){
+        if ( !skus.matches("[ABCDE]*")){
             return -1;
         }
         Map<Character, Integer> itemCounts= new HashMap<>();
@@ -32,4 +32,5 @@ public class CheckoutSolution {
         return total;
     }
 }
+
 
