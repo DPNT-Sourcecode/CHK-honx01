@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class CheckoutSolution {
     public Integer checkout(String skus) {
-        if ( !skus.matches("[ABCDE]*")){
+        if ( !skus.matches("[ABCDEF]*")){
             return -1;
         }
         Map<Character, Integer> itemCounts= new HashMap<>();
@@ -29,8 +29,15 @@ public class CheckoutSolution {
         countB -= freeB;
         if (countB>0){
             total += (countB /2 ) * 45 + (countB % 2 ) *30;}
+        int countF = itemCounts.getOrDefault('F',0);
+        int setsofThree =  countF /3;
+        int remainingF = countF % 3;
+        total += setsofThree * 20;
+        if (remainingF == 2) {
+            total += 20;
+        }else { total += remainingF *10;
+        }
+
         return total;
     }
 }
-
-
