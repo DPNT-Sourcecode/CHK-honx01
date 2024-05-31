@@ -87,10 +87,35 @@ public class CheckoutSolution {
         int countZ =itemCounts.getOrDefault('Z', 0);
         int group= countS + countT + countX + countY + countZ;
         int groupSets = group / 3;
-        while ( groupSets !=0){
-            
-        }
+        total += groupSets * 45;
+        int remaining=  group %3;
 
+        while ( groupSets > 0){
+
+            if(countS>0 && {
+                remaining;
+                countS--;
+                }
+            if(countT>0 ){
+                remaining--;
+                countT--;
+                }
+            if(countX>0 ){
+                remaining--;
+                countX--;
+                }
+            if(countY>0 ){
+                 remaining--;
+                countY--;
+            }
+            if(countZ>0 ){
+                remaining--;
+                countZ--;
+            }
+            groupSets --;
+            }
+        if(countS > 0) total+= countS *
+        total +=
         int countU =itemCounts.getOrDefault('U', 0);
         int setsofFour = countU/ 4;
 
@@ -128,3 +153,4 @@ public class CheckoutSolution {
         return total;
     }
 }
+
