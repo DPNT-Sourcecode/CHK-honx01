@@ -114,8 +114,11 @@ public class CheckoutSolution {
             }
             groupSets --;
             }
-        if(countS > 0) total+= countS *
-        total +=
+        if(countS > 0) total+= countS *20;
+        if(countT > 0) total+= countT *20;
+        if(countX > 0) total+= countX *20;
+        if(countY > 0) total+= countY *20;
+        if(countZ > 0) total+= countZ *20;
         int countU =itemCounts.getOrDefault('U', 0);
         int setsofFour = countU/ 4;
 
@@ -153,4 +156,5 @@ public class CheckoutSolution {
         return total;
     }
 }
+
 
