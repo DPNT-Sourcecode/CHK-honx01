@@ -99,7 +99,7 @@ public class CheckoutSolution {
                 case 1: total += toAdd*20; break;
                 case 2: total += toAdd*17; break;
                 case 3: total += toAdd*20; break;
-                case 4: total += toAdd*20; break;
+                case 4: total += toAdd*21; break;
             }
         }
 
@@ -136,8 +136,3 @@ public class CheckoutSolution {
         return total;
     }
 }
-
-
-
-
-
