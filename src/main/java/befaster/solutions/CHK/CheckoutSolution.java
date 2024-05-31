@@ -90,18 +90,23 @@ public class CheckoutSolution {
         total += groupSets * 45;
         int remainingGroup=  group %3;
         int [] remainingItems= new int[] { countS, countT,countX,countY,countZ};
-        java.util.Arrays.sort(remainingItems);
-        for(int i= remainingItems.length -1; i>=0 && remainingGroup > 0; i--){
-            int toAdd = Math.min(remainingGroup,remainingItems[i]);
-            remainingGroup -= toAdd;
-            switch (i){
-                case 0: total += toAdd*20; break;
-                case 1: total += toAdd*20; break;
-                case 2: total += toAdd*17; break;
-                case 3: total += toAdd*20; break;
-                case 4: total += toAdd*21; break;
+        int [] itemPrices = {20,20,17,20,21};
+        int [] remainingPrices = new int [remainingGroup];
+        int index = 0;
+        for (int i= 0; i< remainingItems.length;i++){
+            for(int j =0; j< remainingItems[i];j++){
+                if(index<remainingGroup){
+                    remainingPrices[index]=itemPrices[i];
+                    index++;
+
+                }
             }
         }
+        for (int price: remainingPrices) {
+            total += price;
+        }
+
+
 
         int countU =itemCounts.getOrDefault('U', 0);
         int setsofFour = countU/ 4;
@@ -136,3 +141,4 @@ public class CheckoutSolution {
         return total;
     }
 }
+
