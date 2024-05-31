@@ -50,7 +50,7 @@ public class CheckoutSolution {
         total += countJ * 60;
 
         int countK =itemCounts.getOrDefault('K', 0);
-        total += (countK / 2) *150 + (countK %2)*80;
+        total += (countK / 2) *120 + (countK %2)*70;
 
         int countL =itemCounts.getOrDefault('L', 0);
         total += countL *90;
@@ -152,6 +152,7 @@ public class CheckoutSolution {
         return total;
     }
 }
+
 
 
 
