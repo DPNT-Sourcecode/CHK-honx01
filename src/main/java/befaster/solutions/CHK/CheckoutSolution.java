@@ -88,37 +88,21 @@ public class CheckoutSolution {
         int group= countS + countT + countX + countY + countZ;
         int groupSets = group / 3;
         total += groupSets * 45;
-        int remaining=  group %3;
+        int remainingGroup=  group %3;
+        int [] remainingItems= new int[] { countS, countT,countX,countY,countZ};
+        java.util.Arrays.sort(remainingItems);
+        for(int i= remainingItems.length -1; i>=0 && remainingGroup > 0; i--){
+            int toAdd = Math.min(remainingGroup,remainingItems[i]);
+            remainingGroup -= toAdd;
+            switch (i){
+                case 0: total += toAdd*20; break;
+                case 1: total += toAdd*20; break;
+                case 2: total += toAdd*17; break;
+                case 3: total += toAdd*20; break;
+                case 4: total += toAdd*20; break;
+            }
+        }
 
-        while ( groupSets > 0){
-
-            if(countS>0 ){
-                remaining--;
-                countS--;
-                }
-            if(countT>0 ){
-                remaining--;
-                countT--;
-                }
-            if(countX>0 ){
-                remaining--;
-                countX--;
-                }
-            if(countY>0 ){
-                 remaining--;
-                countY--;
-            }
-            if(countZ>0 ){
-                remaining--;
-                countZ--;
-            }
-            groupSets --;
-            }
-        if(countS > 0) total+= countS *20;
-        if(countT > 0) total+= countT *20;
-        if(countX > 0) total+= countX *17;
-        if(countY > 0) total+= countY *20;
-        if(countZ > 0) total+= countZ *21;
         int countU =itemCounts.getOrDefault('U', 0);
         int setsofFour = countU/ 4;
 
@@ -152,6 +136,7 @@ public class CheckoutSolution {
         return total;
     }
 }
+
 
 
 
